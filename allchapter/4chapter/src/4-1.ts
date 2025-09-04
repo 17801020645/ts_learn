@@ -1,7 +1,7 @@
-type O1 = { a: string; b: number };
-type O2 = { c: string; d: string };
+interface Customer {
+  custname: string;
+  buymoney: number;
+}
 
-type O3 = O1 & O2;
-let o3: O3 = { a: 'abc', b: 45, c: 'bbb', d: 'fff' };
-
-export {};
+type CustFn = (params: Customer) => string;
+type CustParaTyp = CustFn extends (params: infer P) => any ? P : CustFn;
