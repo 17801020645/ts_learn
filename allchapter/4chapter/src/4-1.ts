@@ -1,7 +1,11 @@
 interface Customer {
-  custname: string;
-  buymoney: number;
+  name: string;
+  degree: number;
+  phone: string;
 }
 
-type CustFn = (params: Customer) => string;
-type CustParaTyp = CustFn extends (params: any) => infer R ? R : CustFn;
+type CustKeyValsTyp = {
+  [P in keyof Customer]?: Customer[P];
+};
+
+
