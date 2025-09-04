@@ -5,7 +5,7 @@ interface Customer {
 }
 
 type CustKeyValsTyp = {
-  [P in keyof Customer]?: Customer[P];
+  [P in keyof Customer]: Customer[P];
 };
 
 
