@@ -4,4 +4,4 @@ interface Customer {
 }
 
 type CustFn = (params: Customer) => string;
-type CustParaTyp = CustFn extends (params: infer P) => any ? P : CustFn;
+type CustParaTyp = CustFn extends (params: any) => infer R ? R : CustFn;
